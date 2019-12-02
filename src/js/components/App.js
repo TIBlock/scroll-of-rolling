@@ -2,6 +2,7 @@ import React from "react";
 import List from "./List";
 import Form from "./Form";
 import Post from "./Posts";
+
 const App = () => (
   <>
     <div>
