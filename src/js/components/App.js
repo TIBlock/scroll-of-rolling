@@ -1,22 +1,27 @@
 import React from "react";
-import List from "./List";
-import Form from "./Form";
-import Post from "./Posts";
+// import List from "./List";
+// import Form from "./Form";
+// import Post from "./Posts";
+import Dice from "./Dice"
 
 const App = () => (
   <>
     <div>
-      <h2>Articles</h2>
-      <List />
+      <h2>Dice Roller</h2>
+      <Dice />
+      <Dice />
+      <Dice />
+      <Dice />
+      <Dice />
     </div>
-    <div>
+    {/* <div>
       <h2>Add a new article</h2>
       <Form />
-    </div>
-    <div>
+    </div> */}
+    {/* <div>
       <h2>API posts</h2>
       <Post />
-    </div>
+    </div> */}
   </>
 );
 export default App;

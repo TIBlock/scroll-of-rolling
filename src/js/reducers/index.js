@@ -3,6 +3,7 @@ import { ADD_ARTICLE, DATA_LOADED } from '../constants/action-types';
 const initialState = {
 	articles: [],
 	remoteArticles: [],
+	dice: []
 };
 
 function rootReducer(state = initialState, action) {
