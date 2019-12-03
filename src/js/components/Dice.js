@@ -1,10 +1,12 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { rollDice } from '../actions/index';
 
-// simple dice roller found online
-// https://codepen.io/Pyremell/pen/eZGGXX/
-// Would like try and put this and other dice together for a standard dice set
-// and be able to roll multiples and have all the numbers plus the sum shown.
+function mapDispatchToProps(dispatch) {
+	return {
+		rollDice: sides => dispatch(rollDice(sides)),
+	};
+}
 
 //dice class that is used to roll the different dice
 // class dice {
@@ -18,29 +20,31 @@ import {connect} from 'react-redux'
 // 	}
 // }
 
-class Dice extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-			sides: 2
+class ConstructDice extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			sides: 2,
 			// props.sides
-		}
-		
-		this.roll = this.roll.bind(this)
-    }
+		};
 
-    roll() {
-        const {sides} = this.state;
-		let randomNumber = Math.floor(Math.random() * sides) + 1
-		console.log("rolling d2 dice - result - ", randomNumber )
-        return randomNumber
+		this.roll = this.roll.bind(this);
+	}
+
+	roll() {
+		const { sides } = this.state;
+		let randomNumber = Math.floor(Math.random() * sides) + 1;
+		console.log('rolling d2 dice - result - ', randomNumber);
+		return randomNumber;
 	}
 	render() {
 		return (
 			<div id="d2Dice">
-                <button id="d2Button" className="dice_button" onClick={this.roll}>d2 Dice</button>
+				<button id="d2Button" className="dice_button" onClick={this.roll}>
+					d2 Dice
+				</button>
 			</div>
-		)
+		);
 	}
 }
 
@@ -192,4 +196,8 @@ class Dice extends Component {
 // };
 
 
-export default Dice
+const Dice = connect(
+	null,
+	mapDispatchToProps
+)(ConstructDice)
+export default Dice;

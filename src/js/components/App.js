@@ -10,9 +10,6 @@ const App = () => (
       <h2>Dice Roller</h2>
       <Dice />
       <Dice />
-      <Dice />
-      <Dice />
-      <Dice />
     </div>
     {/* <div>
       <h2>Add a new article</h2>
