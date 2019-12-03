@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, DATA_LOADED } from '../constants/action-types';
+import { ADD_ARTICLE, DATA_LOADED, ROLL_DICE } from '../constants/action-types';
 
 const initialState = {
 	articles: [],
@@ -19,7 +19,14 @@ function rootReducer(state = initialState, action) {
 		});
 	}
 
+	if (action.type === ROLL_DICE) {
+		return Object.assign({}, state, {
+			dice: "test"
+		})
+	}
+
 	return state;
 }
+
 
 export default rootReducer;

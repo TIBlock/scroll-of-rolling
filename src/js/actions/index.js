@@ -14,8 +14,6 @@ export function getData() {
 	};
 }
 
-
 export function rollDice(payload) {
-	return {type: ROLL_DICE, payload}
-
+	return { type: ROLL_DICE, payload };
 }

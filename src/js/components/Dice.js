@@ -24,24 +24,31 @@ class ConstructDice extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			sides: 2,
-			// props.sides
+			sides: props.sides,
 		};
 
 		this.roll = this.roll.bind(this);
+		this.handleRoll = this.roll.bind(this)
 	}
 
 	roll() {
 		const { sides } = this.state;
 		let randomNumber = Math.floor(Math.random() * sides) + 1;
-		console.log('rolling d2 dice - result - ', randomNumber);
+		console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
 		return randomNumber;
 	}
+	handleRoll(event) {
+		event.preventDefault();
+		const { sides } = this.state;
+		this.props.roll(sides);
+		this.setState({ sides: undefined });
+	}
 	render() {
+		const {sides} = this.state
 		return (
-			<div id="d2Dice">
-				<button id="d2Button" className="dice_button" onClick={this.roll}>
-					d2 Dice
+			<div>
+				<button id="dice_Button" className="dice_button" onClick={this.roll}>
+					d{sides} Dice
 				</button>
 			</div>
 		);
@@ -195,9 +202,5 @@ class ConstructDice extends Component {
 //   printNumber(result);
 // };
 
-
-const Dice = connect(
-	null,
-	mapDispatchToProps
-)(ConstructDice)
+const Dice = connect(null, mapDispatchToProps)(ConstructDice);
 export default Dice;

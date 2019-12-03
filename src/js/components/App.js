@@ -8,7 +8,7 @@ const App = () => (
   <>
     <div>
       <h2>Dice Roller</h2>
-      <Dice />
+      <d2Dice />
       <Dice />
     </div>
     {/* <div>
