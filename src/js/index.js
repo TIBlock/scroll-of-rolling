@@ -3,7 +3,7 @@ import { addArticle, rollDice } from '../js/actions/index';
 
 window.store = store;
 window.addArticle = addArticle;
-window.addArticle = rollDice;
+window.rollDice = rollDice;
 
 
 store.subscribe(() => console.log('Look ma, Redux!!'));

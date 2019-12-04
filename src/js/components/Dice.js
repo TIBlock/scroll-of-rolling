@@ -50,7 +50,7 @@ class ConstructDice extends Component {
 		event.preventDefault();
 		const { sides } = this.state;
 		this.props.roll(sides);
-		this.setState({ sides: undefined });
+		this.setState({ sides: sides });
 	}
 	render() {
 		const {sides} = this.state

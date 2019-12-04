@@ -1,9 +1,9 @@
 import React from "react";
-// import List from "./List";
-// import Form from "./Form";
-// import Post from "./Posts";
+import Form from "./Form";
+import Post from "./Posts";
 import Dice from "./Dice"
 import StandardDice from "./StandardDice"
+import List from "./List";
 
 const App = () => (
   <>
@@ -14,14 +14,18 @@ const App = () => (
       <h3>Custom Dice</h3>
       <Dice />
     </div>
-    {/* <div>
+    <div>
       <h2>Add a new article</h2>
       <Form />
-    </div> */}
-    {/* <div>
+    </div>
+    <div>
+      <h2>List</h2>
+      <List />
+    </div>
+    <div>
       <h2>API posts</h2>
       <Post />
-    </div> */}
+    </div>
   </>
 );
 export default App;

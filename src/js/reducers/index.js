@@ -12,10 +12,13 @@ const initialState = {
 		{id:"d12", sides: 12},
 		{id:"d20", sides: 20},
 		{id:"d100", sides: 100},
-	]
+	],
+	customDice: [],
+	rollHistory:[]
 };
 
 function rootReducer(state = initialState, action) {
+
 	if (action.type === ADD_ARTICLE) {
 		return Object.assign({}, state, {
 			articles: state.articles.concat(action.payload),
