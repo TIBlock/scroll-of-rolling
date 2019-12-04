@@ -3,12 +3,15 @@ import React from "react";
 // import Form from "./Form";
 // import Post from "./Posts";
 import Dice from "./Dice"
+import StandardDice from "./StandardDice"
 
 const App = () => (
   <>
     <div>
-      <h2>Dice Roller</h2>
-      <d2Dice />
+      <h2>Dice Bag</h2>
+      <h3>Standard Dice Set</h3>
+      <StandardDice />
+      <h3>Custom Dice</h3>
       <Dice />
     </div>
     {/* <div>

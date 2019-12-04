@@ -8,29 +8,38 @@ function mapDispatchToProps(dispatch) {
 	};
 }
 
-//dice class that is used to roll the different dice
-// class dice {
-// 	constructor(sides) {
-// 		console.log('The dice is being constructed!');
-// 		this.sides = sides;
-// 	}
-// 	roll() {
-// 		var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-// 		return randomNumber;
-// 	}
+const mapStateToProps = state => {
+	// console.log(state.sides)
+	return { sides: state.sides };
+  };
+
+
+// const standardDice = ({dice}) => {
+// 	console.log(dice)
+// 	return (
+// 	<ul>
+// 		<li>test</li>
+// 		{dice.map(el => (
+// 			<li key={el.id}>Dice</li>
+// 		))}
+// 	</ul>
+// 	)
 // }
+
+
 
 class ConstructDice extends Component {
 	constructor(props) {
 		super(props);
+		// console.log("these are props sent to constructDice",props)
 		this.state = {
 			sides: props.sides,
 		};
-
+		
 		this.roll = this.roll.bind(this);
 		this.handleRoll = this.roll.bind(this)
 	}
-
+	
 	roll() {
 		const { sides } = this.state;
 		let randomNumber = Math.floor(Math.random() * sides) + 1;
@@ -45,26 +54,40 @@ class ConstructDice extends Component {
 	}
 	render() {
 		const {sides} = this.state
+		// console.log(this.state)
 		return (
 			<div>
 				<button id="dice_Button" className="dice_button" onClick={this.roll}>
-					d{sides} Dice
+				d{sides} Dice
 				</button>
 			</div>
 		);
 	}
 }
 
+//dice class that is used to roll the different dice
+// class dice {
+// 	constructor(sides) {
+// 		console.log('The dice is being constructed!');
+// 		this.sides = sides;
+// 	}
+// 	roll() {
+// 		var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+// 		return randomNumber;
+// 	}
+// }
+
+
 // //prints dice roll to the page
 
 // function printNumber(number) {
-// 	var placeholder = document.getElementById('placeholder');
-// 	placeholder.innerHTML = number;
-// }
-// //d2 dice roll.
-
-// let d2Dice = new dice(2);
-
+	// 	var placeholder = document.getElementById('placeholder');
+	// 	placeholder.innerHTML = number;
+	// }
+	// //d2 dice roll.
+	
+	// let d2Dice = new dice(2);
+	
 // //button for d2
 
 // var d2Button = document.getElementById('d2Button');
@@ -202,5 +225,5 @@ class ConstructDice extends Component {
 //   printNumber(result);
 // };
 
-const Dice = connect(null, mapDispatchToProps)(ConstructDice);
+const Dice = connect(mapStateToProps, mapDispatchToProps)(ConstructDice);
 export default Dice;
