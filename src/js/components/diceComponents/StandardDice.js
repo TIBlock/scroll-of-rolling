@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 const mapStateToProps = state => {
+	console.log(state)
 	return { dice: state.standardDice };
 };
-
-//TODO: ADD INDEX TO DICE
-
 class MapStandardDice extends Component {
 	constructor(props) {
 		super(props);
+		// console.log(props)
 		this.state = {
 			dice: props.dice,
 		};

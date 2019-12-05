@@ -18,7 +18,6 @@ const initialState = {
 	],
 	diceSets: [],
 	rollHistory: [],
-
 };
 
 function rootReducer(state = initialState, action) {
