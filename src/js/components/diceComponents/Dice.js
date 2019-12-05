@@ -9,7 +9,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = state => {
-	// console.log(state.sides)
 	return { sides: state.sides };
   };
 
@@ -54,7 +53,6 @@ class ConstructDice extends Component {
 	}
 	render() {
 		const {sides} = this.state
-		// console.log(this.state)
 		return (
 			<div>
 				<button id="dice_Button" className="dice_button" onClick={this.roll}>

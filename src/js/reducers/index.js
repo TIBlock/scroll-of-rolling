@@ -4,21 +4,24 @@ const initialState = {
 	articles: [],
 	remoteArticles: [],
 	standardDice: [
-		{id:"d2", sides: 2},
-		{id:"d4", sides: 4},
-		{id:"d6", sides: 6},
-		{id:"d8", sides: 8},
-		{id:"d10", sides: 10},
-		{id:"d12", sides: 12},
-		{id:"d20", sides: 20},
-		{id:"d100", sides: 100},
+		{ id: 'd2', sides: 2, diceColor: null, textColor: null },
+		{ id: 'd4', sides: 4, diceColor: null, textColor: null },
+		{ id: 'd6', sides: 6, diceColor: null, textColor: null },
+		{ id: 'd8', sides: 8, diceColor: null, textColor: null },
+		{ id: 'd10', sides: 10, diceColor: null, textColor: null },
+		{ id: 'd12', sides: 12, diceColor: null, textColor: null },
+		{ id: 'd20', sides: 20, diceColor: null, textColor: null },
+		{ id: 'd100', sides: 100, diceColor: null, textColor: null },
 	],
-	customDice: [],
-	rollHistory:[]
+	customDice: [
+		{id: null, sides: null, diceColor: null, textColor: null}
+	],
+	diceSets: [],
+	rollHistory: [],
+
 };
 
 function rootReducer(state = initialState, action) {
-
 	if (action.type === ADD_ARTICLE) {
 		return Object.assign({}, state, {
 			articles: state.articles.concat(action.payload),

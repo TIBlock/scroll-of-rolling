@@ -5,5 +5,4 @@ window.store = store;
 window.addArticle = addArticle;
 window.rollDice = rollDice;
 
-
 store.subscribe(() => console.log('Look ma, Redux!!'));

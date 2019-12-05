@@ -22,8 +22,10 @@ class MapStandardDice extends Component {
 		const { dice } = this.state;
 		return (
 			<div>
-				{dice.map(el => (
-					<button key={el.id} onClick={() => this.roll(el.sides)}>{el.id} Dice</button>
+				{dice.map((el,index) => (
+					<button 
+					key={index}
+					onClick={() => this.roll(el.sides)}>{el.id} Dice</button>
 				))}
 			</div>
 		);
