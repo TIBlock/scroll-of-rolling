@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { rollDice } from '../actions/index';
+import { rollDice } from '../../actions/index';
 
 function mapDispatchToProps(dispatch) {
 	return {

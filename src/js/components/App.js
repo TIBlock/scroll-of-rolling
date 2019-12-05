@@ -1,8 +1,8 @@
 import React from "react";
 import Form from "./Form";
 import Post from "./Posts";
-import Dice from "./Dice"
-import StandardDice from "./StandardDice"
+import Dice from "./diceComponents/Dice"
+import StandardDice from "./diceComponents/StandardDice"
 import List from "./List";
 
 const App = () => (
