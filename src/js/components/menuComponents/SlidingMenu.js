@@ -10,7 +10,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = state => {
-    console.log(state.isBagOpen)
 	return { isBagOpen: state.isBagOpen };
 };
 
@@ -20,16 +19,16 @@ class DiceBagMenu extends Component {
 		this.clickOpenBag = this.clickOpenBag.bind(this);
 	}
 	clickOpenBag(event) {
-        event.preventDefault();
-        this.props.toggleBag({
-            isBagOpen: !this.props.isBagOpen})
+		event.preventDefault();
+		this.props.toggleBag({
+			isBagOpen: !this.props.isBagOpen,
+		});
 	}
 
 	// /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-	// closeBag() {
 	// 	document.getElementById('mySidenav').style.width = '0';
 	// 	document.getElementById('main').style.marginLeft = '0';
-	// }
+
 	render() {
 		return (
 			<div id="mySidenav" className="sidenav">

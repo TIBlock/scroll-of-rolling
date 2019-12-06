@@ -1,8 +1,10 @@
-import { ADD_ARTICLE, DATA_LOADED, TOGGLE_BAG } from '../constants/action-types';
+import {
+	ADD_ARTICLE,
+	DATA_LOADED,
+	TOGGLE_BAG,
+} from '../constants/action-types';
 
 const initialState = {
-	articles: [],
-	remoteArticles: [],
 	standardDice: [
 		{ id: 'd2', sides: 2, diceColor: null, textColor: null },
 		{ id: 'd4', sides: 4, diceColor: null, textColor: null },
@@ -13,12 +15,12 @@ const initialState = {
 		{ id: 'd20', sides: 20, diceColor: null, textColor: null },
 		{ id: 'd100', sides: 100, diceColor: null, textColor: null },
 	],
-	customDice: [
-		{id: null, sides: null, diceColor: null, textColor: null}
-	],
+	customDice: [{ id: null, sides: null, diceColor: null, textColor: null }],
 	diceSets: [],
+	isBagOpen: false,
 	rollHistory: [],
-	isBagOpen: false
+	articles: [],
+	remoteArticles: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -35,11 +37,10 @@ function rootReducer(state = initialState, action) {
 	}
 
 	if (action.type === TOGGLE_BAG) {
-		// console.log(state.isBagOpen)
-		// console.log(action.payload.isBagOpen)
+		console.log(action.payload.isBagOpen)
 		return Object.assign({}, state, {
-			isBagOpen: action.payload.isBagOpen
-		})
+			isBagOpen: action.payload.isBagOpen,
+		});
 	}
 
 	return state;
