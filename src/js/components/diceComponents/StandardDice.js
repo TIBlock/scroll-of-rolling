@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 const mapStateToProps = state => {
-	console.log(state)
+	// console.log(state)
 	return { dice: state.standardDice };
 };
 class MapStandardDice extends Component {
@@ -15,6 +15,7 @@ class MapStandardDice extends Component {
 	}
 	roll(sides) {
 		let randomNumber = Math.floor(Math.random() * sides) + 1;
+		// console.log(randomNumber)
 		return randomNumber;
 	}
 	render() {

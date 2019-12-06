@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, DATA_LOADED, ROLL_DICE, LOG_ROLL } from '../constants/action-types';
+import { ADD_ARTICLE, DATA_LOADED, ROLL_DICE, LOG_ROLL, TOGGLE_BAG } from '../constants/action-types';
 
 export function addArticle(payload) {
 	return { type: ADD_ARTICLE, payload };
@@ -21,4 +21,8 @@ export function rollDice(payload)
 
 export function logRollResult(payload){
 	return { type: LOG_ROLL, payload}
+}
+
+export function toggleBag(payload){
+	return {type: TOGGLE_BAG, payload}
 }
