@@ -18,6 +18,7 @@ const initialState = {
 	customDice: [{ id: null, sides: null, diceColor: null, textColor: null }],
 	diceSets: [],
 	isBagOpen: false,
+	bagCSS: "openBag",
 	rollHistory: [],
 	articles: [],
 	remoteArticles: [],
@@ -37,9 +38,9 @@ function rootReducer(state = initialState, action) {
 	}
 
 	if (action.type === TOGGLE_BAG) {
-		console.log(action.payload.isBagOpen)
 		return Object.assign({}, state, {
 			isBagOpen: action.payload.isBagOpen,
+			bagCSS: action.payload.bagCSS,
 		});
 	}
 

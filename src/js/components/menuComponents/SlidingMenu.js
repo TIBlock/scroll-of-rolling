@@ -10,7 +10,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = state => {
-	return { isBagOpen: state.isBagOpen };
+	return {
+		isBagOpen: state.isBagOpen,
+		bagCSS: state.bagCSS,
+	};
 };
 
 class DiceBagMenu extends Component {
@@ -20,9 +23,22 @@ class DiceBagMenu extends Component {
 	}
 	clickOpenBag(event) {
 		event.preventDefault();
-		this.props.toggleBag({
-			isBagOpen: !this.props.isBagOpen,
-		});
+		let bagCSS = '';
+		if (!this.props.isBagOpen) {
+			console.log('the bag should be open now');
+			bagCSS = 'openBag';
+			this.props.toggleBag({
+				isBagOpen: !this.props.isBagOpen,
+				bagCSS: bagCSS,
+			});
+		} else {
+			console.log('the bag should be closed now');
+			bagCSS = 'closedBag';
+			this.props.toggleBag({
+				isBagOpen: !this.props.isBagOpen,
+				bagCSS: bagCSS,
+			});
+		}
 	}
 
 	// /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -30,13 +46,28 @@ class DiceBagMenu extends Component {
 	// 	document.getElementById('main').style.marginLeft = '0';
 
 	render() {
+		window.clickOpenBag = this.clickOpenBag;
+		const openButtonStyle = {
+			fontSize: 30,
+			cursor: 'pointer',
+		};
+
 		return (
-			<div id="mySidenav" className="sidenav">
-				<div className="closebtn" onClick={this.clickOpenBag}>
-					&times;
+			<>
+				<div id="mySidenav" className={"bag " + this.props.bagCSS}>
+					<div className="bagButton" onClick={this.clickOpenBag}>
+						&times;
+					</div>
+					<div className="container">
+						<div id="dice-container" className="row">
+						<StandardDice />
+						</div>
+					</div>
 				</div>
-				<StandardDice />
-			</div>
+				<span className="bagButton" style={openButtonStyle} onClick={this.clickOpenBag}>
+					&#9776; Dice Bag
+				</span>
+			</>
 		);
 	}
 }

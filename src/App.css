@@ -1,45 +1,33 @@
-.App {
-	text-align: center;
-}
-
-.App-logo {
-	height: 40vmin;
-}
-
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-}
-
-.App-link {
-	color: #09d3ac;
-}
-
-/* body {
+body {
 	font-family: 'Lato', sans-serif;
 }
 
-.sidenav {
+html, body, #root, #root > div {
 	height: 100%;
-	width: 0;
+}
+
+.bag {
+	height: 75%;
+	width: 400px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 0;
-	background-color: #111;
+	background-color: tan;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
 }
 
-.sidenav a {
-	padding: 8px 8px 8px 32px;
+.closedBag {
+	left: -400px
+}
+
+.openBag {
+	left: 0;
+}
+
+.bag div {
+	padding: 8px 8px 8px 5px;
 	text-decoration: none;
 	font-size: 25px;
 	color: #818181;
@@ -47,24 +35,30 @@
 	transition: 0.3s;
 }
 
-.sidenav a:hover {
-	color: #f1f1f1;
+#dice-container {
+	width: 400px
 }
 
-.sidenav .closebtn {
+/* .sidenav a:hover {
+	color: #f1f1f1;
+} */
+
+.bag .bagButton {
 	position: absolute;
 	top: 0;
 	right: 25px;
 	font-size: 36px;
-	margin-left: 50px;
+	margin-left: 100px;
 }
 
-#main {
+
+
+/* #main {
 	transition: margin-left 0.5s;
 	padding: 16px;
-}
+} */
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
 	.sidenav {
 		padding-top: 15px;
 	}
