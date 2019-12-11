@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
@@ -11,34 +11,13 @@ const mapStateToProps = state => {
 const RollOutput = ({rollTotal}) => {
 	return(
 	<>
-		<div>
+		<div id="rollOutputWindow" className="col">
 			{rollTotal} <br />
 			ROLL WINDOW GOES HERE
 		</div>
 	</>
 	)}
-// class RollOutput extends Component {
-// 	constructor(props) {
-// 		super(props);
-// 		console.log(props)
-// 		this.state = {
-// 			rollTotal: props.rollTotal
-// 		}
-// 		// this.rollTotal = props.rollTotal
-// 	}
 
-// 	render() {
-// 		const result = this.rollTotal;
-// 		return (
-// 			<>
-// 				<div>
-// 					{result} <br />
-// 					ROLL WINDOW GOES HERE
-// 				</div>
-// 			</>
-// 		);
-// 	}
-// }
 
 const RollOutputWindow = connect(mapStateToProps)(RollOutput);
 export default RollOutputWindow;
