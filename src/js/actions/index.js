@@ -21,6 +21,7 @@ export function getData() {
 }
 
 export function rollDice(payload) {
+	console.log('payload of rollDice in actions',payload)
 	return { type: ROLL_DICE, payload };
 }
 
