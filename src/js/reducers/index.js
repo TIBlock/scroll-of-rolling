@@ -2,6 +2,7 @@ import {
 	ADD_ARTICLE,
 	DATA_LOADED,
 	TOGGLE_BAG,
+	ROLL_DICE,
 } from '../constants/action-types';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
 	diceSets: [],
 	isBagOpen: false,
 	bagCSS: "openBag",
+	rollTotal: "",
 	rollHistory: [],
 	articles: [],
 	remoteArticles: [],
@@ -43,6 +45,13 @@ function rootReducer(state = initialState, action) {
 			bagCSS: action.payload.bagCSS,
 		});
 	}
+
+	if (action.type === ROLL_DICE) {
+		return Object.assign({}, state, {
+			rollTotal: action.payload.rollTotal
+		})
+	}
+
 
 	return state;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StandardDice from '../diceComponents/StandardDice';
 import { connect } from 'react-redux';
 import { toggleBag } from '../../actions/index';
+import RollOutputWindow from '../diceComponents/RollOutput';
 
 function mapDispatchToProps(dispatch) {
 	return {
@@ -60,6 +61,7 @@ class DiceBagMenu extends Component {
 					</div>
 					<div className="container">
 						<div id="dice-container" className="row">
+						<RollOutputWindow />
 						<StandardDice />
 						</div>
 					</div>
