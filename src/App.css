@@ -39,9 +39,9 @@ html, body, #root, #root > div {
 	width: 400px
 }
 
-/* .sidenav a:hover {
-	color: #f1f1f1;
-} */
+.sidenav a:hover {
+	display: fle;
+}
 
 .bag .bagButton {
 	position: absolute;
@@ -66,3 +66,16 @@ html, body, #root, #root > div {
 		font-size: 18px;
 	}
 } */
+
+
+#rollOutputWindow{
+	font-size: 5em;
+	border: 3px black solid;
+	width: 80%;
+	align-self: center;
+	margin-left: 35px;
+}
+
+#dice-button {
+	border: 2px red;
+}

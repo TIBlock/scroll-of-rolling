@@ -52,12 +52,14 @@ class ConstructDice extends Component {
 		this.setState({ sides: sides });
 	}
 	render() {
-		const {sides} = this.state
+		const { dice } = this.state;
 		return (
-			<div>
-				<button id="dice_Button" className="dice_button" onClick={this.roll}>
-				d{sides} Dice
-				</button>
+			<div className="col" align="center">
+				{dice.map((el, index) => (
+					<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
+						{el.id} Dice
+					</button>
+				))}
 			</div>
 		);
 	}

@@ -42,10 +42,6 @@ class DiceBagMenu extends Component {
 		}
 	}
 
-	// /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-	// 	document.getElementById('mySidenav').style.width = '0';
-	// 	document.getElementById('main').style.marginLeft = '0';
-
 	render() {
 		window.clickOpenBag = this.clickOpenBag;
 		const openButtonStyle = {
@@ -55,7 +51,7 @@ class DiceBagMenu extends Component {
 
 		return (
 			<>
-				<div id="mySidenav" className={"bag " + this.props.bagCSS}>
+				<div id="mySidenav" className={"bag  container " + this.props.bagCSS}>
 					<div className="bagButton" onClick={this.clickOpenBag}>
 						&times;
 					</div>
