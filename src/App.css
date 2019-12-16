@@ -70,7 +70,7 @@ html, body, #root, #root > div {
 
 #rollOutputWindow{
 	font-size: 5em;
-	border: 3px black solid;
+	/* border: 3px black solid; */
 	width: 80%;
 	align-self: center;
 	margin-left: 35px;

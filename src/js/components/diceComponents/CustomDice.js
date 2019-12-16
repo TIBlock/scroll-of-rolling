@@ -9,21 +9,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = state => {
-	return { sides: state.sides };
+	return { 
+		sides: state.sides,
+		standardDice: state.standardDice
+	 };
   };
 
-
-// const standardDice = ({dice}) => {
-// 	console.log(dice)
-// 	return (
-// 	<ul>
-// 		<li>test</li>
-// 		{dice.map(el => (
-// 			<li key={el.id}>Dice</li>
-// 		))}
-// 	</ul>
-// 	)
-// }
 
 
 
@@ -34,7 +25,6 @@ class ConstructDice extends Component {
 		this.state = {
 			sides: props.sides,
 		};
-		
 		this.roll = this.roll.bind(this);
 		this.handleRoll = this.roll.bind(this)
 	}
@@ -45,13 +35,14 @@ class ConstructDice extends Component {
 		console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
 		return randomNumber;
 	}
+
 	handleRoll(event) {
 		event.preventDefault();
 		const { sides } = this.state;
 		this.props.roll(sides);
 		this.setState({ sides: sides });
 	}
-	render() {
+	return ( {
 		const { dice } = this.state;
 		return (
 			<div className="col" align="center">
@@ -62,7 +53,7 @@ class ConstructDice extends Component {
 				))}
 			</div>
 		);
-	}
+	})
 }
 
 //dice class that is used to roll the different dice

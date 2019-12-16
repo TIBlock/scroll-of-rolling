@@ -17,11 +17,36 @@ const initialState = {
 		{ id: 'd20', sides: 20, diceColor: null, textColor: null },
 		{ id: 'd100', sides: 100, diceColor: null, textColor: null },
 	],
-	customDice: [{ id: null, sides: null, diceColor: null, textColor: null }],
-	diceSets: [],
+	diceSets: [
+		{
+			name: 'Adv. Roll',
+			dice: {
+				dice1: 'd20',
+				dice2: 'd20',
+			},
+		},
+		{
+			name: 'Dis. Roll',
+			dice: {
+				dice1: 'd20',
+				dice2: 'd20',
+			},
+		},
+		{
+			name: 'Stat Roll',
+			dice: {
+				dice1: 'd6',
+				dice2: 'd6',
+				dice3: 'd6',
+				dice4: 'd6',
+			},
+		},
+		
+	],
+	customDice: [],
 	isBagOpen: false,
-	bagCSS: "openBag",
-	rollTotal: "",
+	bagCSS: 'openBag',
+	rollTotal: '',
 	rollLog: [],
 	articles: [],
 	remoteArticles: [],
@@ -49,17 +74,16 @@ function rootReducer(state = initialState, action) {
 
 	if (action.type === ROLL_DICE) {
 		return Object.assign({}, state, {
-			rollTotal: action.payload.rollTotal
-		})
+			rollTotal: action.payload.rollTotal,
+		});
 	}
 
 	if (action.type === LOG_ROLL) {
 		// console.log(state)
 		return Object.assign({}, state, {
-			rollLog: state.rollLog.concat(action.payload)
-		})
+			rollLog: state.rollLog.concat(action.payload),
+		});
 	}
-
 
 	return state;
 }
