@@ -8,6 +8,7 @@ const mapStateToProps = state => {
 };
 
 const RollOutput = ({ rollTotal }) => {
+	console.log(rollTotal)
 	return (
 		<>
 			<div id="rollOutputWindow" align="center" className="col">
