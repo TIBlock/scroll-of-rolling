@@ -15,13 +15,9 @@ const mapStateToProps = state => {
 	 };
   };
 
-
-
-
 class ConstructDice extends Component {
 	constructor(props) {
 		super(props);
-		// console.log("these are props sent to constructDice",props)
 		this.state = {
 			sides: props.sides,
 		};

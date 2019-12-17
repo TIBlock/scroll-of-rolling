@@ -1,7 +1,4 @@
 import React from 'react';
-// import Form from "./tutorialComponents/Form";
-// import Post from "./tutorialComponents/Posts";
-// import List from "./tutorialComponents/List";
 import DiceBag from './menuComponents/SlidingMenu';
 
 const App = () => (
@@ -9,13 +6,6 @@ const App = () => (
 		<div>
 			<DiceBag />
 		</div>
-		{/* <div>
-      <h2>Dice Bag</h2>
-      <h3>Standard Dice Set</h3>
-      <StandardDice />
-      <h3>Custom Dice</h3>
-      <Dice />
-    </div> */}
 	</>
 );
 export default App;

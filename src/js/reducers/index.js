@@ -1,6 +1,4 @@
 import {
-	ADD_ARTICLE,
-	DATA_LOADED,
 	TOGGLE_BAG,
 	ROLL_DICE,
 	LOG_ROLL,
@@ -56,17 +54,6 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-	if (action.type === ADD_ARTICLE) {
-		return Object.assign({}, state, {
-			articles: state.articles.concat(action.payload),
-		});
-	}
-
-	if (action.type === DATA_LOADED) {
-		return Object.assign({}, state, {
-			remoteArticles: state.remoteArticles.concat(action.payload),
-		});
-	}
 
 	if (action.type === TOGGLE_BAG) {
 		return Object.assign({}, state, {

@@ -3,7 +3,7 @@ import StandardDice from '../diceComponents/StandardDice';
 import { connect } from 'react-redux';
 import { toggleBag } from '../../actions/index';
 import RollOutputWindow from '../diceComponents/RollOutput';
-import DiceSets from '../diceComponents/DiceSets'
+import DiceSets from '../diceComponents/DiceSets';
 
 function mapDispatchToProps(dispatch) {
 	return {
@@ -52,19 +52,23 @@ class DiceBagMenu extends Component {
 
 		return (
 			<>
-				<div id="mySidenav" className={"bag  container " + this.props.bagCSS}>
+				<div id="mySidenav" className={'bag  container ' + this.props.bagCSS}>
 					<div className="bagButton" onClick={this.clickOpenBag}>
 						&times;
 					</div>
 					<div className="container">
 						<div id="dice-container" className="row">
-						<RollOutputWindow />
-						<StandardDice />
-						<DiceSets />
+							<RollOutputWindow />
+							<StandardDice />
+							<DiceSets />
 						</div>
 					</div>
 				</div>
-				<span className="bagButton" style={openButtonStyle} onClick={this.clickOpenBag}>
+				<span
+					className="bagButton"
+					style={openButtonStyle}
+					onClick={this.clickOpenBag}
+				>
 					&#9776; Dice Bag
 				</span>
 			</>
