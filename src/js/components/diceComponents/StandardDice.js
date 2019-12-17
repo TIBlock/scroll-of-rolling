@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import moment from 'moment'
+import moment from 'moment';
 import { connect } from 'react-redux';
-import { rollDice, logRollResult } from '../../actions/index';
+import { rollDice, logRollResult, writeResultArray } from '../../actions/index';
 
 function mapDispatchToProps(dispatch) {
 	return {
 		rollTotal: result => dispatch(rollDice(result)),
-		logRollResult: result => dispatch(logRollResult(result))
+		logRollResult: result => dispatch(logRollResult(result)),
+		resultArray: result => dispatch(writeResultArray(result)),
 	};
 }
 
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
 	return {
 		dice: state.standardDice,
 		rollTotal: state.rollTotal,
-		rollLog: state.rollLog
+		rollLog: state.rollLog,
+		resultArray: state.resultArray,
 	};
 };
 class MapStandardDice extends Component {
@@ -23,7 +25,8 @@ class MapStandardDice extends Component {
 		this.state = {
 			dice: props.dice,
 			rollTotal: props.rollTotal,
-			rollLog: props.rollLog
+			rollLog: props.rollLog,
+			resultArray: props.resultArray,
 		};
 
 		this.roll = this.roll.bind(this);
@@ -31,16 +34,22 @@ class MapStandardDice extends Component {
 	roll(sides) {
 		let rollTotal = Math.floor(Math.random() * sides) + 1;
 		let timeStamp = moment().format();
+		let resultArray = []
 		// console.log(this.props)
+		this.props.resultArray({resultArray})
 		this.props.rollTotal({ rollTotal });
-		this.props.logRollResult({rollTotal, timeStamp})
+		this.props.logRollResult({ rollTotal, timeStamp });
 	}
 	render() {
 		const { dice } = this.state;
 		return (
-			<div className="col" align="center">
+			<div id="standard-dice" className="col" align="center">
 				{dice.map((el, index) => (
-					<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
+					<button
+						id="dice-button"
+						key={index}
+						onClick={() => this.roll(el.sides)}
+					>
 						{el.id} Dice
 					</button>
 				))}

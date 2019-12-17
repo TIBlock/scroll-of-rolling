@@ -7,7 +7,7 @@ html, body, #root, #root > div {
 }
 
 .bag {
-	height: 75%;
+	height: 100%;
 	width: 400px;
 	position: fixed;
 	z-index: 1;
@@ -15,7 +15,7 @@ html, body, #root, #root > div {
 	background-color: tan;
 	overflow-x: hidden;
 	transition: 0.5s;
-	padding-top: 60px;
+	padding-top: 45px;
 }
 
 .closedBag {
@@ -40,7 +40,7 @@ html, body, #root, #root > div {
 }
 
 .sidenav a:hover {
-	display: fle;
+	display: flex;
 }
 
 .bag .bagButton {
@@ -71,11 +71,26 @@ html, body, #root, #root > div {
 #rollOutputWindow{
 	font-size: 5em;
 	/* border: 3px black solid; */
+	height: 207px;
 	width: 80%;
 	align-self: center;
 	margin-left: 35px;
+	border: 2px black solid;
+
 }
 
 #dice-button {
 	border: 2px red;
+}
+
+#standard-dice {
+	margin-top: 20px;
+}
+
+#all-dice-rolled {
+	align-self: center;
+	margin-left: 35px;
+	width: 80%;
+	height: 55px;
+	border: 2px black solid;
 }

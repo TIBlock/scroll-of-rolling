@@ -5,6 +5,7 @@ import {
 	ROLL_DICE,
 	LOG_ROLL,
 	ADV_ROLL,
+	WRITE_RESULT_ARRAY
 } from '../constants/action-types';
 
 const initialState = {
@@ -44,6 +45,7 @@ const initialState = {
 		},
 		
 	],
+	resultArray:[],
 	customDice: [],
 	isBagOpen: false,
 	bagCSS: 'openBag',
@@ -86,10 +88,15 @@ function rootReducer(state = initialState, action) {
 	}
 	
 	if (action.type === LOG_ROLL) {
-		// console.log(state)
 		return Object.assign({}, state, {
 			rollLog: state.rollLog.concat(action.payload),
 		});
+	}
+
+	if (action.type === WRITE_RESULT_ARRAY) {
+		return Object.assign({}, state, {
+			resultArray: action.payload.resultArray
+		})
 	}
 
 	return state;

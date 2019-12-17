@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { rollWithAdvantage, logRollResult } from '../../actions/index';
+import { rollWithAdvantage, logRollResult, writeResultArray } from '../../actions/index';
 
 function mapDispatchToProps(dispatch) {
 	return {
 		rollTotal: result => dispatch(rollWithAdvantage(result)),
-		logRollResult: result => dispatch(logRollResult(result)),
+        logRollResult: result => dispatch(logRollResult(result)),
+        resultArray: result => dispatch(writeResultArray(result))
 	};
 }
 
@@ -19,7 +20,6 @@ const mapStateToProps = state => {
 	};
 };
 
-
 class Dice {
 	constructor(sides) {
 		console.log('The dice is being constructed!');
@@ -30,7 +30,6 @@ class Dice {
 		return result;
 	}
 }
-
 
 class MapDiceSets extends Component {
 	constructor(props) {
@@ -44,50 +43,38 @@ class MapDiceSets extends Component {
 		this.rollWithAdvantage = this.rollWithAdvantage.bind(this);
 	}
 	rollWithAdvantage(diceSets) {
-        let resultArray = []
+		let resultArray = [];
 		let advRollTotal = () => {
+			let d20Dice1 = new Dice(20);
+			let d20Dice2 = new Dice(20);
 
-            let d20Dice1 = new Dice(20)
-            let d20Dice2 = new Dice(20)
+			resultArray.push(d20Dice1.roll(), d20Dice2.roll());
+			return Math.max(...resultArray);
+		};
 
-            resultArray.push(d20Dice1.roll(), d20Dice2.roll())
-
-        }
-    
-            // let result = ''
-			// if (d20Dice1 > d20Dice2) {
-            //     console.log('the first roll was higher: ', d20Dice1);
-			// 	result = d20Dice1;
-			// } else {
-            //     console.log('the second roll was higher: ', d20Dice2);
-			// 	result = d20Dice2;
-            // }
-            // return result
-        
-        let rollTotal = advRollTotal()
+		let rollTotal = advRollTotal();
         let timeStamp = moment().format();
+        this.props.resultArray({resultArray})
 		this.props.rollTotal({ rollTotal });
-        this.props.logRollResult({ rollTotal, timeStamp });
-        console.log(this.state)
-    }
-    
-	rollWithDisAdvantage(diceSets) {
-		function disRollTotal(){
+		this.props.logRollResult({ rollTotal, timeStamp });
+	}
 
-            let firstRoll = Math.floor(Math.random() * 20) + 1;
-            let secondRoll = Math.floor(Math.random() * 20) + 1;
-            let result = ''
+	rollWithDisAdvantage(diceSets) {
+		function disRollTotal() {
+			let firstRoll = Math.floor(Math.random() * 20) + 1;
+			let secondRoll = Math.floor(Math.random() * 20) + 1;
+			let result = '';
 			if (firstRoll < secondRoll) {
-                console.log('the first roll was lower: ', firstRoll);
+				console.log('the first roll was lower: ', firstRoll);
 				result = firstRoll;
 			} else {
-                console.log('the second roll was lower: ', secondRoll);
+				console.log('the second roll was lower: ', secondRoll);
 				result = secondRoll;
-            }
-            return result
-        };
-        let rollTotal = disRollTotal()
-        let timeStamp = moment().format();
+			}
+			return result;
+		}
+		let rollTotal = disRollTotal();
+		let timeStamp = moment().format();
 		this.props.rollTotal({ rollTotal });
 		this.props.logRollResult({ rollTotal, timeStamp });
 	}

@@ -4,7 +4,8 @@ import {
 	ROLL_DICE,
 	LOG_ROLL,
 	TOGGLE_BAG,
-	ADV_ROLL
+	ADV_ROLL,
+	WRITE_RESULT_ARRAY
 } from '../constants/action-types';
 
 export function addArticle(payload) {
@@ -34,5 +35,10 @@ export function toggleBag(payload) {
 }
 
 export function rollWithAdvantage(payload) {
+	console.log(payload)
 	return {type: ADV_ROLL, payload}
+}
+
+export function writeResultArray(payload) {
+	return {type: WRITE_RESULT_ARRAY, payload}
 }
