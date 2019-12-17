@@ -25,31 +25,31 @@ class ConstructDice extends Component {
 		this.handleRoll = this.roll.bind(this)
 	}
 	
-	roll() {
-		const { sides } = this.state;
-		let randomNumber = Math.floor(Math.random() * sides) + 1;
-		console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
-		return randomNumber;
-	}
+	// roll() {
+	// 	const { sides } = this.state;
+	// 	let randomNumber = Math.floor(Math.random() * sides) + 1;
+	// 	console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
+	// 	return randomNumber;
+	// }
 
-	handleRoll(event) {
-		event.preventDefault();
-		const { sides } = this.state;
-		this.props.roll(sides);
-		this.setState({ sides: sides });
-	}
-	return ( {
-		const { dice } = this.state;
-		return (
-			<div className="col" align="center">
-				{dice.map((el, index) => (
-					<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
-						{el.id} Dice
-					</button>
-				))}
-			</div>
-		);
-	})
+	// handleRoll(event) {
+	// 	event.preventDefault();
+	// 	const { sides } = this.state;
+	// 	this.props.roll(sides);
+	// 	this.setState({ sides: sides });
+	// }
+	// return ( {
+		
+	// 	return (
+	// 		<div className="col" align="center">
+	// 			{dice.map((el, index) => (
+	// 				<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
+	// 					{el.id} Dice
+	// 				</button>
+	// 			))}
+	// 		</div>
+	// 	);
+	// })
 }
 
 //dice class that is used to roll the different dice
