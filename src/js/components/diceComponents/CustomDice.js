@@ -9,11 +9,11 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = state => {
-	return { 
+	return {
 		sides: state.sides,
-		standardDice: state.standardDice
-	 };
-  };
+		standardDice: state.standardDice,
+	};
+};
 
 class ConstructDice extends Component {
 	constructor(props) {
@@ -22,9 +22,9 @@ class ConstructDice extends Component {
 			sides: props.sides,
 		};
 		this.roll = this.roll.bind(this);
-		this.handleRoll = this.roll.bind(this)
+		this.handleRoll = this.roll.bind(this);
 	}
-	
+
 	// roll() {
 	// 	const { sides } = this.state;
 	// 	let randomNumber = Math.floor(Math.random() * sides) + 1;
@@ -39,7 +39,7 @@ class ConstructDice extends Component {
 	// 	this.setState({ sides: sides });
 	// }
 	// return ( {
-		
+
 	// 	return (
 	// 		<div className="col" align="center">
 	// 			{dice.map((el, index) => (
@@ -64,17 +64,16 @@ class ConstructDice extends Component {
 // 	}
 // }
 
-
 // //prints dice roll to the page
 
 // function printNumber(number) {
-	// 	var placeholder = document.getElementById('placeholder');
-	// 	placeholder.innerHTML = number;
-	// }
-	// //d2 dice roll.
-	
-	// let d2Dice = new dice(2);
-	
+// 	var placeholder = document.getElementById('placeholder');
+// 	placeholder.innerHTML = number;
+// }
+// //d2 dice roll.
+
+// let d2Dice = new dice(2);
+
 // //button for d2
 
 // var d2Button = document.getElementById('d2Button');

@@ -50,9 +50,15 @@ class DiceBagMenu extends Component {
 			cursor: 'pointer',
 		};
 
+		let bg = require('../../../canvas.jpg');
+
 		return (
 			<>
-				<div id="mySidenav" className={'bag  container ' + this.props.bagCSS}>
+				<div
+					style={{ backgroundImage: 'url(' + bg + ')' }}
+					id="mySidenav"
+					className={'bag  container ' + this.props.bagCSS}
+				>
 					<div className="bagButton" onClick={this.clickOpenBag}>
 						&times;
 					</div>

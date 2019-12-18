@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => {
 	return {
 		rollTotal: state.rollTotal,
-		resultArray: state.resultArray
+		resultArray: state.resultArray,
 	};
 };
 
 const RollOutput = ({ rollTotal, resultArray }) => {
-
-	let diceRolls = resultArray.join().replace(",", ' & ')
+	let diceRolls = resultArray.join().replace(',', ' & ');
 
 	return (
 		<>

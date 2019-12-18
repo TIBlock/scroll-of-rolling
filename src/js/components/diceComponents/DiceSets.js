@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { rollWithAdvantage, logRollResult, writeResultArray } from '../../actions/index';
+import {
+	rollWithAdvantage,
+	logRollResult,
+	writeResultArray,
+} from '../../actions/index';
 
 function mapDispatchToProps(dispatch) {
 	return {
 		rollTotal: result => dispatch(rollWithAdvantage(result)),
-        logRollResult: result => dispatch(logRollResult(result)),
-        resultArray: result => dispatch(writeResultArray(result))
+		logRollResult: result => dispatch(logRollResult(result)),
+		resultArray: result => dispatch(writeResultArray(result)),
 	};
 }
 
@@ -53,8 +57,8 @@ class MapDiceSets extends Component {
 		};
 
 		let rollTotal = advRollTotal();
-        let timeStamp = moment().format();
-        this.props.resultArray({resultArray})
+		let timeStamp = moment().format();
+		this.props.resultArray({ resultArray });
 		this.props.rollTotal({ rollTotal });
 		this.props.logRollResult({ rollTotal, timeStamp });
 	}

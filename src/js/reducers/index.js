@@ -3,7 +3,7 @@ import {
 	ROLL_DICE,
 	LOG_ROLL,
 	ADV_ROLL,
-	WRITE_RESULT_ARRAY
+	WRITE_RESULT_ARRAY,
 } from '../constants/action-types';
 
 const initialState = {
@@ -25,28 +25,27 @@ const initialState = {
 				dice2: 'd20',
 			},
 		},
-		{
-			name: 'Dis. Roll',
-			dice: {
-				dice1: 'd20',
-				dice2: 'd20',
-			},
-		},
-		{
-			name: 'Stat Roll',
-			dice: {
-				dice1: 'd6',
-				dice2: 'd6',
-				dice3: 'd6',
-				dice4: 'd6',
-			},
-		},
-		
+		// {
+		// 	name: 'Dis. Roll',
+		// 	dice: {
+		// 		dice1: 'd20',
+		// 		dice2: 'd20',
+		// 	},
+		// },
+		// {
+		// 	name: 'Stat Roll',
+		// 	dice: {
+		// 		dice1: 'd6',
+		// 		dice2: 'd6',
+		// 		dice3: 'd6',
+		// 		dice4: 'd6',
+		// 	},
+		// },
 	],
-	resultArray:[],
+	resultArray: [],
 	customDice: [],
 	isBagOpen: false,
-	bagCSS: 'openBag',
+	bagCSS: 'closedBag',
 	rollTotal: '',
 	rollLog: [],
 	articles: [],
@@ -54,7 +53,6 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-
 	if (action.type === TOGGLE_BAG) {
 		return Object.assign({}, state, {
 			isBagOpen: action.payload.isBagOpen,
@@ -73,7 +71,7 @@ function rootReducer(state = initialState, action) {
 			rollTotal: action.payload.rollTotal,
 		});
 	}
-	
+
 	if (action.type === LOG_ROLL) {
 		return Object.assign({}, state, {
 			rollLog: state.rollLog.concat(action.payload),
@@ -82,8 +80,8 @@ function rootReducer(state = initialState, action) {
 
 	if (action.type === WRITE_RESULT_ARRAY) {
 		return Object.assign({}, state, {
-			resultArray: action.payload.resultArray
-		})
+			resultArray: action.payload.resultArray,
+		});
 	}
 
 	return state;
