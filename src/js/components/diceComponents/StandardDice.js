@@ -35,7 +35,6 @@ class MapStandardDice extends Component {
 		let rollTotal = Math.floor(Math.random() * sides) + 1;
 		let timeStamp = moment().format();
 		let resultArray = []
-		// console.log(this.props)
 		this.props.resultArray({resultArray})
 		this.props.rollTotal({ rollTotal });
 		this.props.logRollResult({ rollTotal, timeStamp });
