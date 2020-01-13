@@ -3,53 +3,53 @@ import { connect } from 'react-redux';
 import { rollDice } from '../../actions/index';
 
 function mapDispatchToProps(dispatch) {
-	return {
-		rollDice: sides => dispatch(rollDice(sides)),
-	};
+  return {
+    rollDice: sides => dispatch(rollDice(sides)),
+  };
 }
 
 const mapStateToProps = state => {
-	return {
-		sides: state.sides,
-		standardDice: state.standardDice,
-	};
+  return {
+    sides: state.sides,
+    standardDice: state.standardDice,
+  };
 };
 
 class ConstructDice extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			sides: props.sides,
-		};
-		this.roll = this.roll.bind(this);
-		this.handleRoll = this.roll.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      sides: props.sides,
+    };
+    this.roll = this.roll.bind(this);
+    this.handleRoll = this.roll.bind(this);
+  }
 
-	// roll() {
-	// 	const { sides } = this.state;
-	// 	let randomNumber = Math.floor(Math.random() * sides) + 1;
-	// 	console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
-	// 	return randomNumber;
-	// }
+  // roll() {
+  // 	const { sides } = this.state;
+  // 	let randomNumber = Math.floor(Math.random() * sides) + 1;
+  // 	console.log('rolling a d' + {sides} + ' dice - result - ', randomNumber);
+  // 	return randomNumber;
+  // }
 
-	// handleRoll(event) {
-	// 	event.preventDefault();
-	// 	const { sides } = this.state;
-	// 	this.props.roll(sides);
-	// 	this.setState({ sides: sides });
-	// }
-	// return ( {
+  // handleRoll(event) {
+  // 	event.preventDefault();
+  // 	const { sides } = this.state;
+  // 	this.props.roll(sides);
+  // 	this.setState({ sides: sides });
+  // }
+  // return ( {
 
-	// 	return (
-	// 		<div className="col" align="center">
-	// 			{dice.map((el, index) => (
-	// 				<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
-	// 					{el.id} Dice
-	// 				</button>
-	// 			))}
-	// 		</div>
-	// 	);
-	// })
+  // 	return (
+  // 		<div className="col" align="center">
+  // 			{dice.map((el, index) => (
+  // 				<button id="dice-button" key={index} onClick={() => this.roll(el.sides)}>
+  // 					{el.id} Dice
+  // 				</button>
+  // 			))}
+  // 		</div>
+  // 	);
+  // })
 }
 
 //dice class that is used to roll the different dice

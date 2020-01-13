@@ -1,131 +1,117 @@
 body {
-	font-family: 'Lato', sans-serif;
-	overscroll-behavior: none;
+  font-family: 'Lato', sans-serif;
+  overscroll-behavior: none;
 }
 
 html,
 body,
 #root,
 #root > div {
-	height: 100%;
+  height: 100%;
 }
 
 .bag {
-	height: 100%;
-	width: 400px;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	background-color: tan;
-	overflow-x: hidden;
-	transition: 0.5s;
-	padding-top: 45px;
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: tan;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 45px;
 }
 
 .closedBag {
-	left: -400px;
+  left: -400px;
 }
 
 .openBag {
-	left: 0;
+  left: 0;
 }
 
 .bag div {
-	padding: 8px 8px 8px 5px;
-	text-decoration: none;
-	font-size: 25px;
-	color: darkred;
-	display: block;
-	transition: 0.3s;
+  padding: 8px 8px 8px 5px;
+  text-decoration: none;
+  font-size: 25px;
+  color: darkred;
+  display: block;
+  transition: 0.3s;
 }
 
 #dice-container {
-	width: 400px;
+  width: 400px;
 }
 
 .sidenav a:hover {
-	display: flex;
+  display: flex;
 }
 
 .bag .bagButton {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 100px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 100px;
 }
 
-/* #main {
-	transition: margin-left 0.5s;
-	padding: 16px;
-} */
-
-/* @media screen and (max-height: 450px) {
-	.sidenav {
-		padding-top: 15px;
-	}
-	.sidenav a {
-		font-size: 18px;
-	}
-} */
-
 .bag {
-	border-radius: 25px;
+  border-radius: 25px;
 }
 
 #dice-button {
-	border: 2px red;
-	height: 65px;
-	border-radius: 25px;
-	margin: 5px;
+  border: 2px red;
+  height: 65px;
+  border-radius: 25px;
+  margin: 5px;
 }
 
 #standard-dice {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #rollOutputWindow {
-	font-size: 5em;
-	/* border: 3px black solid; */
-	height: 207px;
-	width: 80%;
-	align-self: center;
-	margin-left: 35px;
-	border: 5px darkgoldenrod solid;
-	border-radius: 25px;
-	color: ivory;
-	background-color: #846f38;
+  font-size: 5em;
+  /* border: 3px black solid; */
+  height: 207px;
+  width: 80%;
+  align-self: center;
+  margin-left: 35px;
+  border: 5px darkgoldenrod solid;
+  border-radius: 25px;
+  color: ivory;
+  background-color: #846f38;
 }
 
 #all-dice-rolled {
-	align-self: center;
-	margin-left: 35px;
-	width: 80%;
-	height: 55px;
-	border: 5px darkgoldenrod solid;
-	border-radius: 25px;
-	margin-bottom: 5px;
-	color: ivory;
-	background-color: #846f38;
-	opacity: 0.9;
+  align-self: center;
+  margin-left: 35px;
+  width: 80%;
+  height: 55px;
+  border: 5px darkgoldenrod solid;
+  border-radius: 25px;
+  margin-bottom: 5px;
+  color: ivory;
+  background-color: #846f38;
+  opacity: 0.9;
 }
 
 img.tabletop {
-	min-height: 100%;
-	min-width: 1024px;
+  min-height: 100%;
+  min-width: 1024px;
 
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
 
-	/* Set up positioning */
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 span.bagButton {
-	position: absolute;
-	color: ivory;
+  position: absolute;
+  color: ivory;
 }
