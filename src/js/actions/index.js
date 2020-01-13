@@ -19,7 +19,6 @@ export function toggleBag(payload) {
 }
 
 export function rollWithAdvantage(payload) {
-	console.log(payload);
 	return { type: ADV_ROLL, payload };
 }
 
