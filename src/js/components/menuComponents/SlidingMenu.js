@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StandardDice from '../diceComponents/StandardDice';
 import { connect } from 'react-redux';
-import { toggleBag } from '../../actions/index';
+import { toggleBag } from '../../actions/actionsIndex';
 import RollOutputWindow from '../diceComponents/RollOutput';
 import DiceSets from '../diceComponents/DiceSets';
 

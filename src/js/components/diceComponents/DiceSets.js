@@ -5,7 +5,7 @@ import {
   rollWithAdvantage,
   logRollResult,
   writeResultArray,
-} from '../../actions/index';
+} from '../../actions/actionsIndex';
 
 function mapDispatchToProps(dispatch) {
   return {

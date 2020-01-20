@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { rollDice, logRollResult, writeResultArray } from '../../actions/index';
+import { rollDice, logRollResult, writeResultArray } from '../../actions/actionsIndex';
 
 function mapDispatchToProps(dispatch) {
   return {
