@@ -63,41 +63,46 @@ class MapDiceSets extends Component {
     this.props.logRollResult({ rollTotal, timeStamp });
   }
 
-  rollWithDisAdvantage(diceSets) {
+  rollWithDisadvantage(diceSets) {
+    let resultArray = [];
     function disRollTotal() {
-      let firstRoll = Math.floor(Math.random() * 20) + 1;
-      let secondRoll = Math.floor(Math.random() * 20) + 1;
-      let result = '';
-      if (firstRoll < secondRoll) {
-        console.log('the first roll was lower: ', firstRoll);
-        result = firstRoll;
-      } else {
-        console.log('the second roll was lower: ', secondRoll);
-        result = secondRoll;
-      }
-      return result;
+      let d20Dice1 = new Dice(20);
+      let d20Dice2 = new Dice(20);
+
+      resultArray.push(d20Dice1.roll(), d20Dice2.roll())
+      return Math.min(...resultArray)
     }
     let rollTotal = disRollTotal();
     let timeStamp = moment().format();
+    this.props.resultArray({ resultArray });
     this.props.rollTotal({ rollTotal });
     this.props.logRollResult({ rollTotal, timeStamp });
   }
 
   render() {
-    const { diceSets } = this.state;
+    // const { diceSets } = this.state;
     // console.log(this.state)
     return (
-      <div className="col" align="center">
-        {diceSets.map((el, index) => (
-          <button
-            id="dice-button"
-            key={index}
-            onClick={() => this.rollWithAdvantage()}
-          >
-            {el.name} Dice
-          </button>
-        ))}
-      </div>
+      <>
+        <div className="col" align="center">
+            <button
+              id="dice-button"
+              key="1"
+              onClick={() => this.rollWithAdvantage()}
+            >
+              Roll With Advantage
+            </button>
+        </div>
+        <div className="col" align="center">
+            <button
+              id="dice-button"
+              key="2"
+              onClick={() => this.rollWithDisadvantage()}
+            >
+              Roll With Disadvantage
+            </button>
+        </div>
+      </>
     );
   }
 }

@@ -18,13 +18,13 @@ const initialState = {
     { id: 'd100', sides: 100, diceColor: null, textColor: null },
   ],
   diceSets: [
-    {
-      name: 'Adv. Roll',
-      dice: {
-        dice1: 'd20',
-        dice2: 'd20',
-      },
-    },
+    // {
+    //   name: 'Adv. Roll',
+    //   dice: {
+    //     dice1: 'd20',
+    //     dice2: 'd20',
+    //   },
+    // },
     // {
     // 	name: 'Dis. Roll',
     // 	dice: {
